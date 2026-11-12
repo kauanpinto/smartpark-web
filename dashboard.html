@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SmartPark</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h2>SmartPark</h2>
+      <div class="nav-links">
+        <a href="reservations.html">Minhas Reservas</a>
+        <button id="btnLogout">Sair</button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div id="map"></div>
+      <div class="panel">
+        <h2>Locais Disponíveis</h2>
+        <ul id="lista-lots" class="list-group"></ul>
+
+        <h2>Nova Reserva</h2>
+        <input type="hidden" id="lotSelecionado" />
+
+        <label>Vaga</label>
+        <select id="vaga">
+          <option value="">Selecione um local acima</option>
+        </select>
+
+        <label>Chegada Prevista</label>
+        <input type="datetime-local" id="entrada" />
+
+        <label>Saída Prevista</label>
+        <input type="datetime-local" id="saida" />
+
+        <button id="btnReservar" class="btn">Reservar e Pagar</button>
+        <p id="msgReserva" class="msg"></p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+  </body>
+</html>

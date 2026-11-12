@@ -97,7 +97,7 @@ document.getElementById("btnReservar").addEventListener("click", async () => {
 
 document.getElementById("btnLogout").addEventListener("click", () => {
   localStorage.removeItem("token");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
 
 init();

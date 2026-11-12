@@ -32,7 +32,7 @@ async function handleAuth(action) {
     const token = await cred.user.getIdToken();
     
     localStorage.setItem("token", token);
-    window.location.href = "index.html";
+    window.location.href = "dashboard.html";
   } catch (err) {
     msg.textContent = "Erro de autenticação. Verifique os dados.";
     msg.className = "msg msg-error";

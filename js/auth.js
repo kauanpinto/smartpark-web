@@ -12,7 +12,7 @@ export const auth = getAuth(app);
 export function requireAuth() {
   onAuthStateChanged(auth, (user) => {
     if (!user) {
-      window.location.href = "login.html";
+      window.location.href = "index.html";
     }
   });
 }
