@@ -8,14 +8,13 @@ async function carregarReservas() {
   
   try {
     const reservas = await apiFetch("/reservations");
-    
     tbody.textContent = "";
 
     if (reservas.length === 0) {
       const tr = document.createElement("tr");
       const td = document.createElement("td");
       
-      td.colSpan = 4;
+      td.colSpan = 5;
       td.textContent = "Nenhuma reserva encontrada.";
       tr.appendChild(td);
       tbody.appendChild(tr);
@@ -42,10 +41,40 @@ async function carregarReservas() {
         ? `R$ ${r.final_amount.toFixed(2)}`
         : `Est. R$ ${r.price_estimate.toFixed(2)}`;
 
+      const tdAcao = document.createElement("td");
+
+      if (r.status === "PENDING_PAYMENT") {
+        const btnPagar = document.createElement("button");
+        btnPagar.className = "btn btn-small";
+        btnPagar.textContent = "Pagar";
+
+        btnPagar.addEventListener("click", async () => {
+          try {
+            btnPagar.textContent = "...";
+            btnPagar.disabled = true;
+
+            const checkout = await apiFetch(`/reservations/${r.id}/checkout`, {
+              method: "POST",
+            });
+            
+            window.location.href = checkout.checkoutUrl;
+          } catch (err) {
+            alert(err.message);
+            btnPagar.textContent = "Pagar";
+            btnPagar.disabled = false;
+          }
+        });
+
+        tdAcao.appendChild(btnPagar);
+      } else {
+        tdAcao.textContent = "-";
+      }
+
       tr.appendChild(tdVaga);
       tr.appendChild(tdChegada);
       tr.appendChild(tdStatus);
       tr.appendChild(tdValor);
+      tr.appendChild(tdAcao);
       tbody.appendChild(tr);
     });
   } catch (err) {
