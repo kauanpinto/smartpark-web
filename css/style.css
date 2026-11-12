@@ -191,3 +191,32 @@ input:focus {
 .list-group li:last-child {
   border-bottom: none;
 }
+
+select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: var(--border-primary);
+  font-size: 1rem;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+select:focus {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: -1px;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-small {
+  width: auto;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
