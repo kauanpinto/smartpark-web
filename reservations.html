@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minhas Reservas - SmartPark</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h2>SmartPark</h2>
+      <div class="nav-links">
+        <a href="index.html">Voltar ao Mapa</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="panel table-wrapper">
+        <h2>Minhas Reservas</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Vaga</th>
+              <th>Chegada</th>
+              <th>Status</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-reservas"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="js/reservations.js"></script>
+  </body>
+</html>
