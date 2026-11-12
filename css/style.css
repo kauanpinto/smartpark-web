@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+:root {
+  --color-background: #ffffff;
+  --color-text-primary: #000000;
+  --color-surface-subtle: #f5f5f5;
+  --color-border-primary: #000000;
+  --color-border-muted: #cccccc;
+  --color-error: #ff0000;
+  --color-success: #008000;
+  --border-primary: 1px solid var(--color-border-primary);
+  --border-subtle: 1px solid var(--color-border-muted);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: var(--border-primary);
+  font-size: 1rem;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+input:focus {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: -1px;
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-text-primary);
+  color: var(--color-background);
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: var(--border-primary);
+  margin-top: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-subtle);
+}
+
+.msg {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.msg-error {
+  color: var(--color-error);
+}
+
+.center-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.login-box {
+  border: var(--border-primary);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
