@@ -5,6 +5,7 @@ Interface web responsiva para reserva de vagas de estacionamento, integrada com 
 ## Projetos relacionados
 
 [SmartPark API](https://github.com/kauanpinto/smartpark-api.git)
+[SmartPark IoT](https://github.com/kauanpinto/smartpark-iot.git)
 
 ## Tecnologias
 
@@ -41,6 +42,8 @@ cd smartpark-web
 Abra o index.html no navegador
 ```
 
-## Autor
+## Autores
 
-**Kauan Fernando**
+- [Everson Miranda](https://github.com/eversonMI)
+- [Kauan Fernando](https://github.com/kauanpinto)
+- [Simon Henrique](https://github.com/SimHen90)
