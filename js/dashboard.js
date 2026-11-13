@@ -1,5 +1,7 @@
 import { requireAuth } from "./auth.js";
 import { apiFetch } from "./api.js";
+import { auth } from "./auth.js";
+import { signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 requireAuth();
 
@@ -95,7 +97,8 @@ document.getElementById("btnReservar").addEventListener("click", async () => {
   }
 });
 
-document.getElementById("btnLogout").addEventListener("click", () => {
+document.getElementById("btnLogout").addEventListener("click", async () => {
+  await signOut(auth);
   localStorage.removeItem("token");
   window.location.href = "index.html";
 });
