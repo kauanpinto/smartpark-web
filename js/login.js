@@ -39,9 +39,10 @@ async function handleAuth(action) {
   }
 }
 
-document
-  .getElementById("btnLogin")
-  .addEventListener("click", () => handleAuth("login"));
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  handleAuth("login");
+});
 
 document
   .getElementById("btnRegister")
